@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../sql & base de donné/projet DB/projet"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#52f9a9",
+			"activityBar.background": "#52f9a9",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#b265fa",
+			"activityBarBadge.foreground": "#15202b",
+			"commandCenter.border": "#15202b99",
+			"editorGroup.border": "#52f9a9",
+			"panel.border": "#52f9a9",
+			"sash.hoverBorder": "#52f9a9",
+			"sideBar.border": "#52f9a9",
+			"statusBar.background": "#21f791",
+			"statusBar.border": "#21f791",
+			"statusBar.foreground": "#15202b",
+			"statusBarItem.hoverBackground": "#08dd77",
+			"statusBarItem.remoteBackground": "#21f791",
+			"statusBarItem.remoteForeground": "#15202b",
+			"tab.activeBorder": "#52f9a9",
+			"titleBar.activeBackground": "#21f791",
+			"titleBar.activeForeground": "#15202b",
+			"titleBar.border": "#21f791",
+			"titleBar.inactiveBackground": "#21f79199",
+			"titleBar.inactiveForeground": "#15202b99"
+		},
+		"peacock.color": "#21f791"
+	}
+}
