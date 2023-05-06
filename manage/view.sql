@@ -3,12 +3,12 @@
 SELECT league
 FROM spi_global_rankings
 WHERE league ="French Ligue 1" IN(
-SELECT *
-FROM spi_global_rankings
-WHERE off > ( 
-SELECT avg(off)
-FROM spi_global_rankings
-)			
+    SELECT *
+    FROM spi_global_rankings
+    WHERE off > ( 
+      SELECT avg(off)
+      FROM spi_global_rankings
+    )			
 )
 -- essayer de voir la note moyenne 
 -- 
@@ -17,4 +17,4 @@ FROM spi_global_rankings
 --ALTER TABLE spi_global_rankings RENAME prev_ranks To prev_rank;
 --- il faut que je supprimes , une ligne en question 
 ---DELETE FROM spi_matches WHERE season = 0;
--- coir le nombre d'équipes qui ont une attaque offensive superieur à la moyenne  
+-- voir le nombre d'équipes qui ont une attaque offensive superieur à la moyenne  
