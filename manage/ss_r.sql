@@ -35,19 +35,19 @@ FROM spi_global_rankings
 -- TOP 
 SELECT TOP 1 pre_rank, league
 FROM spi_global_ranking
-WHERE spi < 'SELECT avg(spi) 
+WHERE spi < (SELECT avg(spi) 
 FROM spi_global_rankings);
 
 -- ROWNUM 
 SELECT pre_rank, league
 FROM spi_global_ranking
-WHERE spi < SELECT avg(spi) 
+WHERE spi < (SELECT avg(spi) 
 FROM spi_global_rankings) AND ROWNUM <= 1;
 
 -- Encore plus complexe ça sais en DB2 base de donnée IBM 
 SELECT pre_rank, league
 FROM spi_global_ranking
-WHERE spi < 'SELECT avg(spi) 
+WHERE spi < SELECT avg(spi) 
 FROM spi_global_rankings)
 FETCH FIRST 1 ROWS ONLY;
 
@@ -61,17 +61,3 @@ SELECT ville, COUNT(*) as nb_clients
 FROM clients 
 GROUP BY ville 
 HAVING COUNT(*) >= 3;
-
-
--- CONSEIL: le min et le max s'utilise avec la clause group by
--- sous requetes qui permet de determiner la ville ayant la plus petite longueur 
-
-SELECT LENGTH((SELECT CITY FROM STATION ORDER BY LENGTH(CITY) ASC LIMIT 1));
-
--- utilisant d'une clause having et d'une sous requête dans cette clause 
-
-SELECT CITY, LENGTH(CITY)
-FROM STATION 
-GROUP BY CITY 
-HAVING LENGTH(CITY) = (SELECT MIN(LENGTH(CITY)) FROM STATION)
- OR LENGTH(CITY) = (SELECT MAX(LENGTH(CITY)) FROM STATION);
